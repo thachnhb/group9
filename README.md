@@ -46,12 +46,15 @@ When the Relative Strength Index (RSI) indicates oversold or overbought conditio
 
 ## Implementation
 
-- Briefly describe the implemetation.
-  - How to set up the enviroment to run the source code and required steps to replicate the results
-  - Discuss the concrete implementation if there are any essential details
-  - How to run each step from `In-sample Backtesting`, Step 4 to `Out-of-sample Backtesting`, Step 6 (or `Paper Trading`, Step 7).
-  - How to change the algorithm configurations for different run.
-- Most important section and need the most details to correctly replicate the results.
+1. Clone repo:
+	git clone “…”
+2. Create enviroment:
+    1. cd <repo>
+    2. create enviroment:    “python -m venv venv” hoặc “python3 -m venv venv”
+    3. Active môi trường ảo: 
+        1. Windows: .\venv\Scripts\activate
+        2. MacOS/Linux: source venv/bin/activate
+3. Setup libraries from requirement.txt: pip install -r requirements.txt
 
 ## In-sample Backtesting
 
