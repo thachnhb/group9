@@ -44,17 +44,31 @@ When the Relative Strength Index (RSI) indicates oversold or overbought conditio
 
 - Step 3 of the Nine-Step
 
-## Implementation
+## 🚀 Implementation Guide
 
-1. Clone repo:
-	git clone “…”
-2. Create enviroment:
-    1. cd <repo>
-    2. create enviroment:    “python -m venv venv” hoặc “python3 -m venv venv”
-    3. Active môi trường ảo: 
-        1. Windows: .\venv\Scripts\activate
-        2. MacOS/Linux: source venv/bin/activate
-3. Setup libraries from requirement.txt: pip install -r requirements.txt
+Follow the steps below to get the project up and running locally.  
+Make sure you have **Python 3.x** installed.
+
+---
+
+### 🔧 1. Clone the Repository
+
+```bash
+git clone "https://github.com/your-username/your-repo.git"
+
+⚙️ 2. Create Environment
+1. Move into the project directory
+- cd <repo>
+2. Create the virtual environment
+python -m venv venv
+# or
+python3 -m venv venv
+3. Activate the virtual environment (Kích hoạt môi trường ảo):
+🪟 Windows
+.\venv\Scripts\activate
+🍎 MacOS / 🐧 Linux
+source venv/bin/activate
+
 
 ## In-sample Backtesting
 
