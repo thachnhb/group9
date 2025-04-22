@@ -33,21 +33,20 @@ When the Relative Strength Index (RSI) indicates oversold or overbought conditio
 - Data source: Algotrade Internship Database
 - Data type: CSV
 - Data period:
-- How to get the input data?
-- How to store the output data?
-
-### Data collection
-
-- Step 2 of the Nine-Step
-
-### Data Processing
-
-- Step 3 of the Nine-Step
+```bash
+  in-sample data: 2021-02-08 to 2023-12-22
+  out-sample data: 2023-12-22 to 2025-03-19
+```
+### How to get the input data?
+- option 1: using script
+```bash
+python -m src.data.loaddata()
+```
+- option 2: download from google drive, extract and put the files in the data folder
 
 ## 🚀 Implementation Guide
 
 Follow the steps below to get the project up and running locally.  
-Make sure you have **Python 3.x** installed.
 
 ---
 
@@ -113,12 +112,6 @@ source venv/bin/activate
 - Brieftly shown the result: table, image, etc.
 - Has link to the Out-of-sample Backtesting Report
 
-## Paper Trading
-
-- Describe the Paper Trading step
-- Step 7 of the Nine-Step
-- Optional
-
 ### Optimization Result
 
 - Brieftly shown the result: table, image, etc.
@@ -132,8 +125,3 @@ source venv/bin/activate
 ## Reference
 
 - All the reference goes here.
-
-## Other information
-
-- Link to the Final Report (Paper) should be somewhere in the `README.md` file.
-- Please make sure this file is relatively easy to follow.
