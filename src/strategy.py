@@ -1,7 +1,7 @@
 # Strategy.py
 import numpy as np
 import pandas as pd
-from Evaluate import compute_rsi
+from src.evaluate import compute_rsi
 
 # Constants
 MARGIN_RATIO = 0.175

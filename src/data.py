@@ -139,6 +139,11 @@ def load_data(in_sample_path="data/in_sample_data.csv", out_sample_path="data/ou
     Returns:
         Tuple of DataFrames: (in_sample_df, out_sample_df)
     """
+    if not os.path.exists(in_sample_path) or not os.path.exists(out_sample_path):
+        print("Tệp dữ liệu chưa có. Đang tạo dữ liệu mới...")
+        # Nếu không có tệp, chạy main để tạo chúng
+        main()
+
     in_sample_df = pd.read_csv(in_sample_path)
     out_sample_df = pd.read_csv(out_sample_path, parse_dates=True, index_col=0)
     return in_sample_df, out_sample_df

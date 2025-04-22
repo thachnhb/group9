@@ -3,10 +3,10 @@
 import optuna
 from optuna.samplers import TPESampler
 
-from data import load_data
-from strategy import run_strategy
-from evaluate import sharpe_ratio, maximum_drawdown
-from utils import plot_all_optuna
+from src.data import load_data
+from src.strategy import run_strategy
+from src.evaluate import sharpe_ratio, maximum_drawdown
+from src.utils import plot_all_optuna
 
 def objective(trial, data):
     sma_window = trial.suggest_int("sma_window", 50, 200)
@@ -43,7 +43,10 @@ if __name__ == "__main__":
     in_sample_df, out_sample_df = load_data()
     
     print("🔍 Running Optimization...")
-    study = run_optimization(out_sample_df, n_trials=12, seed=710)
+
+    # study = run_optimization(out_sample_df, n_trials=5, seed=710)
+    # study = run_optimization(out_sample_df, n_trials=80, seed=710)
+    study = run_optimization(out_sample_df, n_trials=80, seed=710)
 
     best_params, asset_df = evaluate_best_strategy(study, out_sample_df)
 

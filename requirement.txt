@@ -2,4 +2,6 @@ optuna
 pandas
 numpy
 matplotlib
+plotly
+scikit-learn
 psycopg
