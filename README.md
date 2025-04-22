@@ -30,19 +30,18 @@ When the Relative Strength Index (RSI) indicates oversold or overbought conditio
 
 ## Data
 
-- Data source: Algotrade Internship Database
-- Data type: CSV
-- Data period:
-```bash
+Data source: Algotrade Internship Database
+Data type: CSV
+Data period:
+
   in-sample data: 2021-02-08 to 2023-12-22
   out-sample data: 2023-12-22 to 2025-03-19
-```
 ### How to get the input data?
-- option 1: using script
-```bash
+option 1: using script
+
 python -m src.data.loaddata()
-```
-- option 2: download from google drive, extract and put the files in the data folder
+option 2: download from google drive, extract and put the files in the data folder
+
 
 ## 🚀 Implementation Guide
 
@@ -52,11 +51,8 @@ Follow the steps below to get the project up and running locally.
 
 ### 🔧 1. Clone the Repository
 
-```bash
 git clone "https://github.com/your-username/your-repo.git"
-```
 ### ⚙️ 2. Create Environment
-```bash
 1. Move into the project directory
 - cd <repo>
 
@@ -72,7 +68,7 @@ python3 -m venv venv
 
 🍎 MacOS / 🐧 Linux
 source venv/bin/activate
-```
+
 
 
 ## In-sample Backtesting
