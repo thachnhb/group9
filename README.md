@@ -10,7 +10,7 @@ This `README.md` file serves as an example how a this will look like in a standa
 
 This project implements a hybrid trading strategy on the VN30F1M futures index using the Simple Moving Average (SMA-100) and the Relative Strength Index (RSI-14). The strategy aims to capture mean-reversion signals that occur when RSI reaches extreme levels (overbought/oversold) against the prevailing SMA trend. We backtest the strategy using data from Algotrade, evaluating performance through returns, Sharpe ratio, and drawdown. Results suggest the approach can yield consistent returns under specific market conditions.
 
-## Introduction
+## 1. Introduction
 
 Algorithmic trading has become an essential component of modern financial markets, allowing traders to implement and automate strategies based on well-defined rules and quantitative signals. Among the various classes of strategies, mean-reversion and momentum-based approaches are two fundamental techniques widely used by both retail and institutional traders.
 
@@ -19,56 +19,87 @@ This project focuses on applying a hybrid mean-reversion and momentum strategy t
 - Simple Moving Average (SMA) with a 100-period window is used to capture the long-term trend direction.
 - The Relative Strength Index (RSI) with a 14-period window is employed to identify short-term overbought and oversold conditions.
 
-## Related Work (or Background)
+## 2. Related Work (or Background)
 
 - Prerequisite reading if the audience needs knowledge before exploring the project.
 - Optional
 
-## Trading (Algorithm) Hypotheses
+## 3. Trading (Algorithm) Hypotheses
 
 When the Relative Strength Index (RSI) indicates oversold or overbought conditions and aligns with the broader trend confirmed by a slower-moving average, prices are likely to revert to their mean. This creates opportunities to trade counter to short-term extremes while respecting the dominant trend.
 
-## Data
+## 4. Data
+
+---
 
 - Data source: Algotrade Internship Database
 - Data type: CSV
 - Data period:
-- How to get the input data?
-- How to store the output data?
+  - In-sample data: 2021-02-08 to 2023-12-22
+  - Out-sample data: 2023-12-22 to 2025-03-19
+- To get the input data:
+  - Option 1: Download [data](https://drive.google.com/drive/folders/1bK3aXEVfabASZs2xV8VBXYA0mXjQtB-A?usp=sharing) from google drive, extract then files into `data` folder
+  - Option 2: Use this script at project folder to get data from Algotrade:
+  ```bash
+  python -m src.data.loaddata()
+  ```
+- If you use option 2, `in_sample_data.csv` and `out_sample_data.csv` is stored at `data` folder
 
 ### Data collection
 
-- Step 2 of the Nine-Step
+---
 
-### Data Processing
+The price of VN30F1M are collected from Algotrade database using SQL queries, then was pre-processed and used for this project.
 
-- Step 3 of the Nine-Step
-
-## 🚀 Implementation Guide
-
-Follow the steps below to get the project up and running locally.  
-Make sure you have **Python 3.x** installed.
+### Data processing
 
 ---
 
-### 🔧 1. Clone the Repository
+Raw data was first cleaned by removing all records before 9:00 AM. Timestamps were rounded down to the nearest minute, and only the first record of each minute was retained to reduce noise. Column names were standardized, keeping only the essential fields: timestamp, ticker symbol, and closing price. The final dataset was then split into two sets: In-sample (70%) and Out-sample (30%), ensuring there was no overlap in timestamps between the two sets.
+
+## 🚀 Implementation Guide
+
+Follow the steps below to get the project up and running locally.
+
+---
+
+### 1. Clone this Repository
 
 ```bash
-git clone "https://github.com/your-username/your-repo.git"
+git clone "https://github.com/thachnhb/group9.git"
+```
 
-⚙️ 2. Create Environment
-1. Move into the project directory
-- cd <repo>
-2. Create the virtual environment
-python -m venv venv
-# or
-python3 -m venv venv
-3. Activate the virtual environment (Kích hoạt môi trường ảo):
-🪟 Windows
-.\venv\Scripts\activate
-🍎 MacOS / 🐧 Linux
-source venv/bin/activate
+### 2. Create Environment
 
+#### 2.1. Move into the project directory
+
+```bash
+   cd <repo>
+```
+
+#### 2.2 Create the virtual environment
+
+```bash
+   python -m venv venv
+```
+
+#### 2.3 Activate the virtual environment (Kích hoạt môi trường ảo):
+
+```bash
+.\venv\Scripts\activate (For Windows)
+```
+
+or
+
+```bash
+source venv/bin/activate (For MacOS/Linux)
+```
+
+### 3. Install required libraries from requirement.txt
+
+```bash
+pip install -r requirements.txt
+```
 
 ## In-sample Backtesting
 
