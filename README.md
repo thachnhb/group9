@@ -138,7 +138,11 @@ The process automatically explores parameter combinations and records their perf
 | `seed`         | Random seed for reproducibility of results.                     | `710` (used in example)  |
 | `sampler`      | Sampling algorithm used to suggest new parameter values.        | `TPESampler`             |
 
-### Optimization Result
+To run optimize for In-sample data, use this command:
+
+```bash
+python -m src.optimize
+```
 
 #### In-sample Optimization Result
 
@@ -150,15 +154,21 @@ After run above In-sample Optimization, we get below params:
 | rsi_lower | The buy threshold | 29.140662837219445 |
 | rsi_upper | The sell thresold | 65.00361398539523 |
 
+### Apply params of Optimization for Out-of-sample Backtesting
+
+To run Backtesting with best params from Optimize for Out-Sample, we use this command:
+
+```bash
+python -m src.backtest --use-optimized
+```
+
+Then, we get below result:
+
+![In-sample Backtesting Result](./graph/backtest_OutSample/Asset_Over_Time.png)
+
 #### Out-of-sample Optimization Result (Optional)
 
 - ![Optimization Result](./graph/optimization_outsample/asset_over_time.png)
-
-### Out-of-sample Backtesting Result
-
-After apply the params from In-sample Optimization , we get below result:
-
-![In-sample Backtesting Result](./graph/backtest_OutSample/Asset_Over_Time.png)
 
 ## Conclusion
 

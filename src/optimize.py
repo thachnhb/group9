@@ -50,6 +50,11 @@ if __name__ == "__main__":
 
     best_params, asset_df = evaluate_best_strategy(study, out_sample_df)
 
+    # Sau khi evaluate_best_strategy()
+    with open("best_params.json", "w") as f:
+        json.dump(best_params, f, indent=4)
+        print("✅ Đã lưu best_params vào best_params.json")
+
     # Vẽ biểu đồ asset và biểu đồ Optuna
     import matplotlib.pyplot as plt
 
