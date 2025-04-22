@@ -90,8 +90,7 @@ source venv/bin/activate
 
 ### In-sample Backtesting Result
 
-- Brieftly shown the result: table, image, etc.
-- Has link to the In-sample Backtesting Report
+- ![In-sample Backtesting Result](./graph/backtest_InSample/asset_overtime.png)
 
 ## Optimization
 
@@ -123,22 +122,25 @@ The process automatically explores parameter combinations and records their perf
 
 
 
-### Optimization Result
+### In-sample Optimization Result
 
-- Brieftly shown the result: table, image, etc.
-- Has link to the Optimization Report
+- ![Optimization Result](./graph/optimization_insample/asset_over_time_optimized.png)
+
+### Out-sample Optimization Resut
+
+- ![Optimization Result](./graph/optimization_outsample/asset_over_time.png)
 
 ## Out-of-sample Backtesting
 
-- Describe the Out-of-sample Backtesting step
-  - Parameter
-  - Data
-- Step 6 of th Nine-Step
+| Parameter    | Description                      | Default Value     |
+|--------------|----------------------------------|-------------------|
+| sma_window   | calculate a Simple Moving Average| 200               |
+| rsi_lower    | The buy threshold                | 29.140662837219445|
+| rsi_upper    | The sell thresold                | 65.00361398539523 |
 
 ### Out-of-sample Backtesting Reuslt
 
-- Brieftly shown the result: table, image, etc.
-- Has link to the Out-of-sample Backtesting Report
+- ![In-sample Backtesting Result](./graph/backtest_OutSample/Asset_Over_Time.png)
 
 ## Paper Trading
 
