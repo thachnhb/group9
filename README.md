@@ -55,19 +55,25 @@ Make sure you have **Python 3.x** installed.
 
 ```bash
 git clone "https://github.com/your-username/your-repo.git"
-
-⚙️ 2. Create Environment
+```
+### ⚙️ 2. Create Environment
+```bash
 1. Move into the project directory
 - cd <repo>
+
 2. Create the virtual environment
 python -m venv venv
 # or
 python3 -m venv venv
+
 3. Activate the virtual environment (Kích hoạt môi trường ảo):
+
 🪟 Windows
 .\venv\Scripts\activate
+
 🍎 MacOS / 🐧 Linux
 source venv/bin/activate
+```
 
 
 ## In-sample Backtesting
