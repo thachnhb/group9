@@ -114,7 +114,7 @@ python -m src.backtest
 Final Asset Value: 55475000.0000002
   Sharpe Ratio: 0.7217
   Maximum Drawdown: -9.66%
-  Accumulated return rate: 0.3869
+  Accumulated return rate: 0.3869  //change
 ```
 
 ---
@@ -156,10 +156,12 @@ python -m src.optimize
 ![Optimization Result](./graph/optimization_insample/asset_over_time_optimized.png)
 After run above In-sample Optimization, we get below params:
 | Parameter | Description | Default Value |
-| ---------- | --------------------------------- | ------------------ |
-| sma_window | calculate a Simple Moving Average | 200 |
+| ----------| --------------------------------- | ------------------ |
+| sma_window| calculate a Simple Moving Average | 200 |
 | rsi_lower | The buy threshold | 29.140662837219445 |
 | rsi_upper | The sell thresold | 65.00361398539523 |
+
+![Optimization Result](./graph/optimization_insample/history_plot.png) //change
 
 ### Apply params of Optimization for Out-of-sample Backtesting
 
