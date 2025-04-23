@@ -32,7 +32,7 @@ When the Relative Strength Index (RSI) indicates oversold or overbought conditio
   - Option 1: Download [data](https://drive.google.com/drive/folders/1bK3aXEVfabASZs2xV8VBXYA0mXjQtB-A?usp=sharing) from google drive, extract these files into `data` folder
   - Option 2: Use this script at project folder to get data (please wait for a few minutes ^^):
   ```bash
-  python -m src.data.loaddata()
+  python -m src.data
   ```
 - If you use option 2, `in_sample_data.csv` and `out_sample_data.csv` is stored at `data` folder
 
@@ -43,11 +43,6 @@ The price of VN30F1M are collected from Algotrade database using SQL queries, th
 ### Data processing
 
 Raw data was first cleaned by removing all records before 9:00 AM. Timestamps were rounded down to the nearest minute, and only the first record of each minute was retained to reduce noise. Column names were standardized, keeping only the essential fields: timestamp, ticker symbol, and closing price. The final dataset was then split into two sets: In-sample (70%) and Out-sample (30%), ensuring there was no overlap in timestamps between the two sets.
-
-#### In-sample and Out-sample comparison
-
-![Processed Data](./graph/insample_outsample_data.png)
-
 
 ---
 
@@ -115,6 +110,13 @@ python -m src.backtest
 
 - ![In-sample Backtesting Result](./graph/backtest_InSample/asset_overtime.png)
 
+```bash
+Final Asset Value: 55475000.0000002
+  Sharpe Ratio: 0.7217
+  Maximum Drawdown: -9.66%
+  Accumulated return rate: 0.3869
+```
+
 ---
 
 ## 6. Optimization
@@ -152,17 +154,12 @@ python -m src.optimize
 #### In-sample Optimization Result
 
 ![Optimization Result](./graph/optimization_insample/asset_over_time_optimized.png)
-
-#### History plot for optimization
-
-![Optimization Result](./graph/optimization_insample/history_plot_optimized.png)
-
 After run above In-sample Optimization, we get below params:
-| Parameter | Description                       | Default Value      |
-| ----------| --------------------------------- | ------------------ |
-| sma_window| calculate a Simple Moving Average | 200                |
-| rsi_lower | The buy threshold                 | 29.140662837219445 |
-| rsi_upper | The sell thresold                 | 65.00361398539523  |
+| Parameter | Description | Default Value |
+| ---------- | --------------------------------- | ------------------ |
+| sma_window | calculate a Simple Moving Average | 200 |
+| rsi_lower | The buy threshold | 29.140662837219445 |
+| rsi_upper | The sell thresold | 65.00361398539523 |
 
 ### Apply params of Optimization for Out-of-sample Backtesting
 
@@ -174,7 +171,7 @@ python -m src.backtest --use-optimized
 
 Then, we get below result:
 
-![Out-sample Backtesting Result](./graph/backtest_OutSample/Asset_Over_Time.png)
+![In-sample Backtesting Result](./graph/backtest_OutSample/Asset_Over_Time.png)
 
 #### Out-of-sample Optimization Result (Optional)
 
