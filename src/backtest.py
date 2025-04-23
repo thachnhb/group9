@@ -58,16 +58,11 @@ if __name__ == "__main__":
             print("📈 Sử dụng best_params từ optimize:")
             print(best_params)
         else:
-            print("⚠️ Không tìm thấy best_params.json! Sử dụng best_params mặc định.")
+            print("Không tìm thấy best_params.json! Sử dụng best_params mặc định.")
             best_params = default_params
+        print("Chạy backtest trên **out-sample** data...")
+        run_backtest(out_sample_df, best_params)
     else:
-        print("▶️ Sử dụng best_params mặc định.")
-        best_params = default_params
-    # best_params = {
-    #     "sma_window": 200,
-    #     "rsi_lower": 29.140662837219445,
-    #     "rsi_upper": 65.00361398539523
-    # }
-
-    # Chạy trên out-sample
-    run_backtest(out_sample_df, best_params)
+        print(" Sử dụng best_params mặc định.")
+        print(" Chạy backtest trên **in-sample** data...")
+        run_backtest(in_sample_df, default_params)
